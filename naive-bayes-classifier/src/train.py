@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 
 # Cargar datos
-df = pd.read_csv("data/dataset.csv")
+df = pd.read_csv("naive-bayes-classifier/data/dataset.csv")
 
 # Separar características y etiquetas
 X = df["text"]
