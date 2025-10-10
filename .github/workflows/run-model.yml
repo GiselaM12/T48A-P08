@@ -1,11 +1,6 @@
 name: Run Naive Bayes Model
 
-on:
-  push:
-    paths:
-      - 'src/**'
-      - 'data/**'
-      - 'requirements.txt'
+on: [push, pull_request]
 
 jobs:
   train-model:
