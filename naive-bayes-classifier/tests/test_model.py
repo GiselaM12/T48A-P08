@@ -20,3 +20,8 @@ class TestTextClassificationModel(unittest.TestCase):
         """Verifica que las etiquetas predichas sean válidas ('positivo' o 'negativo')."""
         for label in y_pred:
             self.assertIn(label, ["positivo", "negativo"], "Etiqueta de predicción no válida.")
+
+    def test_dataset_length(self):
+        df = pd.read_csv("data/dataset.csv")
+        self.assertGreaterEqual(len(df), 10, "El archivo dataset.csv debe contener al menos 10 registros.")
+
