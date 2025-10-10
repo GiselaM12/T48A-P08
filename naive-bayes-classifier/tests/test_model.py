@@ -1,6 +1,7 @@
 import unittest
 import sys
 import os
+import pandas as pd
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src.model import model, y_pred, y_test
