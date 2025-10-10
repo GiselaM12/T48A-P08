@@ -24,3 +24,6 @@ model.fit(X_train, y_train)
 # Evaluar
 y_pred = model.predict(X_test)
 print(classification_report(y_test, y_pred))
+
+# Para que las pruebas puedan importar
+__all__ = ["model", "y_pred", "y_test"]
