@@ -21,7 +21,7 @@ jobs:
         pip install -r naive-bayes-classifier/data/requirements.txt
 
     - name: Run training script
-      run: python src/train.py
+      run: python naive-bayes-classifier/src/train.py
 
     - name: Run tests
       run: |
