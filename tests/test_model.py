@@ -1,4 +1,6 @@
 import unittest
+from src.model import model, y_pred, y_test
+
 
 class TestTextClassificationModel(unittest.TestCase):
     def test_model_training(self):
