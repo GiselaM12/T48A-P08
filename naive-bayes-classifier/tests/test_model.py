@@ -1,5 +1,5 @@
 import unittest
-from ..src.model import model, y_pred, y_test
+from src.model import model, y_pred, y_test
 
 
 class TestTextClassificationModel(unittest.TestCase):
