@@ -1,16 +1,17 @@
 import unittest
-import sys
-import os
 import pandas as pd
+import os
+import sys
+
+# Para poder importar desde src/
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from src.model import model, y_pred, y_test, df  # agrega df aquí si lo usas en otros tests
-
-
+from src.model import model, y_pred, y_test, df
 
 
 class TestTextClassificationModel(unittest.TestCase):
-    def test_model_training(self):
+
+    def test_model_exists(self):
         """Verifica que el modelo se haya creado correctamente."""
         self.assertIsNotNone(model, "El modelo no fue creado correctamente.")
 
@@ -21,9 +22,12 @@ class TestTextClassificationModel(unittest.TestCase):
     def test_prediction_labels(self):
         """Verifica que las etiquetas predichas sean válidas ('positivo' o 'negativo')."""
         for label in y_pred:
-            self.assertIn(label, ["positivo", "negativo"], "Etiqueta de predicción no válida.")
+            self.assertIn(label, ["positivo", "negativo"], f"Etiqueta no válida: {label}")
 
     def test_dataset_length(self):
-        df = pd.read_csv("naive-bayes-classifier/data/dataset.csv")
+        """Verifica que el dataset tenga al menos 10 registros."""
         self.assertGreaterEqual(len(df), 10, "El archivo dataset.csv debe contener al menos 10 registros.")
 
+
+if __name__ == "__main__":
+    unittest.main()
