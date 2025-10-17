@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import sys
 
-# Para poder importar desde src/
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src.model import model, y_pred, y_test, df
