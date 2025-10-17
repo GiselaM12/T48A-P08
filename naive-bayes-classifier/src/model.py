@@ -5,27 +5,19 @@ from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 
-# Cargar datos
-df = pd.read_csv("naive-bayes-classifier/data/dataset.csv")
+df = pd.read_csv("naive-bayes-classifier/data/dataset.csv")  # debe estar aquí para que sea global
 
-# Separar características y etiquetas
 X = df["text"]
 y = df["label"]
 
-# Dividir en entrenamiento y prueba
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=42)
 
-# Crear pipeline
 model = make_pipeline(CountVectorizer(), MultinomialNB())
 
-# Entrenar
 model.fit(X_train, y_train)
 
-# Predecir
 y_pred = model.predict(X_test)
 
-# Mostrar reporte (opcional)
-print(classification_report(y_test, y_pred))
+print(classification_report(y_test, y_pred, zero_division=0))  # agrega zero_division para evitar warnings
 
-# Exportar para test
 __all__ = ["model", "y_pred", "y_test", "df"]
