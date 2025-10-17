@@ -1,5 +1,11 @@
 text,label
-"Me encanta este producto",positivo
 "Odio este servicio",negativo
 "Es excelente",positivo
 "Terrible experiencia",negativo
+"No me gusto",negativo
+"Muy buen servicio",positivo
+"Mediocre",negativo
+"horrible trato",negativo
+"Increible servicio",positivo
+"Este producto es bueno",positivo
+"Este producto es malo",negativo
